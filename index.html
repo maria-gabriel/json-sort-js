@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Home</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <!--
+      Need a visual blank slate?
+      Remove all code in `styles.css`!
+    -->
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="script.js"></script>
+  </head>
+  <body>
+    <main>
+      <h1>Json sort</h1>
+    </main>
+  </body>
+
+<script type="text/javascript">
+    var arr = [
+  {
+    "categoria": "cate-3",
+    "sub": "sub14",
+    "nombre": "Ebay",
+    "link": "https://www.ebay.com/",
+    "trafico": "887430000",
+    "tipo": "reta",
+    "tamanio": "grande",
+    "pais": "usa",
+    "habilitado": "1"
+  },
+  {
+    "categoria": "cate-3",
+    "sub": "sub14",
+    "nombre": "Aliexpress",
+    "link": "http://www.aliexpress.com/",
+    "trafico": "679500000",
+    "tipo": "reta",
+    "tamanio": "macro",
+    "pais": "china",
+    "habilitado": "1"
+  },
+  {
+    "categoria": "cate-3",
+    "sub": "sub14",
+    "nombre": "ZAlliExpress",
+    "link": "https://es.aliexpress.com/",
+    "trafico": "449000",
+    "tipo": "reta",
+    "tamanio": "grande",
+    "pais": "usa",
+    "habilitado": "1"
+  },
+  {
+    "categoria": "cate-3",
+    "sub": "sub14",
+    "nombre": "Amazon",
+    "link": "https://www.amazon.com.mx/",
+    "trafico": "2560000000",
+    "tipo": "reta",
+    "tamanio": "macro",
+    "pais": "usa",
+    "habilitado": "1"
+  },
+  {
+    "categoria": "cate-3",
+    "sub": "sub14",
+    "nombre": "Walmart",
+    "link": "https://www.walmart.com.mx/",
+    "trafico": "428830000",
+    "tipo": "market",
+    "tamanio": "macro",
+    "pais": "usa",
+    "habilitado": "1"
+  },
+  {
+    "categoria": "cate-3",
+    "sub": "sub14",
+    "nombre": "Etsy",
+    "link": "https://www.etsy.com",
+    "trafico": "39885",
+    "tipo": "market",
+    "tamanio": "grande",
+    "pais": "usa",
+    "habilitado": "1"
+  },
+  {
+    "categoria": "cate-3",
+    "sub": "sub14",
+    "nombre": "Taobao",
+    "link": "https://world.taobao.com/",
+    "trafico": "354520000",
+    "tipo": "market",
+    "tamanio": "macro",
+    "pais": "china",
+    "habilitado": "1"
+  },
+  {
+    "categoria": "cate-3",
+    "sub": "sub14",
+    "nombre": "Pinduoduo",
+    "link": "https://m.pinduoduo.com/home/",
+    "trafico": "283360",
+    "tipo": "reta",
+    "tamanio": "macro",
+    "pais": "china",
+    "habilitado": "1"
+  },
+  {
+    "categoria": "cate-2",
+    "sub": "sub11",
+    "nombre": "HomeDepot",
+    "link": "https://www.homedepot.com/",
+    "trafico": "247490000",
+    "tipo": "reta",
+    "tamanio": "macro",
+    "pais": "usa",
+    "habilitado": "1"
+  }
+];
+
+   // Before Sorting
+   document.write("<b>Before Sorting </b><br/>");         
+      for (var n = 0; n < arr.length; n++) {
+          document.write(arr[n].trafico + ' ' + arr[n].nombre + '<br>');
+    }
+
+    // Trafico order
+    function SortByID(x,y) {
+      return x.trafico - y.trafico; 
+    }
+
+	  // Nombre order
+    function SortByName(x,y) {
+      return ((x.nombre == y.nombre) ? 0 : ((x.nombre > y.nombre) ? 1 : -1 ));
+    }
+
+    arr.sort(SortByID);
+
+    document.write("<br/><b>After Sorting </b> <br/>");
+    //ascending
+    //for(var n = 0; n < arr.length; n++){
+    
+    //descending
+    for(var n = arr.length-1; n >= 0; n--){
+      document.write('{ <br>'+
+      '&nbsp&nbsp"categoria": "'+arr[n].categoria+'",<br>'+
+      '&nbsp&nbsp"sub": "'+arr[n].sub+'",<br>'+
+      '&nbsp&nbsp"nombre": "'+arr[n].nombre+'",<br>'+
+      '&nbsp&nbsp"link": "'+arr[n].link+'",<br>'+
+      '&nbsp&nbsp"trafico": "'+arr[n].trafico+'",<br>'+
+      '&nbsp&nbsp"tipo": "'+arr[n].tipo+'",<br>'+
+      '&nbsp&nbsp"tamanio": "'+arr[n].tamanio+'",<br>'+
+      '&nbsp&nbsp"pais": "'+arr[n].pais+'"<br>'+
+      '},<br>');
+    }
+
+</script>
+
+</html>
